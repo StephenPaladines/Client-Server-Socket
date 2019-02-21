@@ -1,0 +1,39 @@
+.TH "qbank" "5" "02/18/2019" "" "MySQL-qbank Manual"
+.SH "NAME"
+mysql.connector \- python module used to connect the server to the cloud database.
+
+.SH "DESCRIPTION"
+.PP
+The persistent storage used for this project is a MySQL database that is 
+accessed via a host and a user name provided by the CISE department. 
+.PP 
+With the use of the mysql.connector module, the user is able to send and retrieve
+data from the database while also ensuring consistency and persistence.
+.PP
+The mysql.connector module is installed into the user's host to allow the
+sending and receving of data to the MySQL database. This allows the program to
+use the traditional SQL commands such as INSERT, DELETE , and SELECT.
+
+.PP
+The schema used in the assignment is as follows: id, tag, name, questions,
+and answer. Every column besides id is string type and is required to be anything
+but NULL.
+.SH "EXAMPLES"
+.PP
+The following are examples of SQL commands that can be used within the program. 
+All SQL commands are handled by the server while the input is provided by the client.
+.PP
+Select:
+.br
+dbCursor.execute("SELECT * FROM question where id = '%d'" %(int(userQuestionNum)))
+.PP
+Delete:
+.br
+dbCursor.execute("DELETE FROM question where id = '%d' "  %(int(userQuestionNum)))
+.PP
+Insert
+.br
+dbCursor.execute("INSERT INTO question (tag,name,questions,answer) VALUES (%s,%s,%s,%s)",(userTag,userName,userQue,userAnswer))
+.SH "SEE ALSO"
+.PP
+https://www.mysql.com/products/connector/

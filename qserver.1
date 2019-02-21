@@ -1,0 +1,62 @@
+.TH Server "1" "Feb 2019" "GNU coreutils 8.28" "User Commands (Server)"
+.SH NAME
+qserver [arg1] [arg2] \- input a port and localhost
+.SH SYNOPSIS
+.B qserver
+[\fI\,HOSTNAME\/\fR]... [\fI\,PORT\/\fR]...
+.SH DESCRIPTION
+.\" Add any additional description here
+.PP
+Connects the server to the provided hostname and port for the socket betweem server and client.
+.br
+Main objective of the server is to handle the data sent from the client and submit it to the database
+
+.PP
+Arguments are not mandatory and will be passed with localhost and a default port if no input is provided.
+
+
+The following commands are used by the serve once the conneciton is established.
+
+.TP
+\fB\.> p\fR Adds a new question to the server
+
+
+.TP
+\fB\.>d <x>\fR Deletes a question from the database by the user inputted number
+
+
+.TP
+\fB\.>h\fR Ask the user for help if needed
+
+
+.TP
+\fB\.>k\fR Kill the server once requested 
+.br
+
+.TP
+\fB\.>q\fR Close the connection between server and client
+
+
+.TP
+\fB\.>c <x> <n>\fR Check if the answer is correct and corresponds to the quiz question
+by the provided number
+
+
+.TP
+\fB\.>r\fR Looks for a random row in the database and asks the user for answer
+
+
+.TP
+\fB\.>g <x>\fR Grab the question by the user input provided number
+.SH "REPORTING BUGS"
+Currently the bugs in the program are caused by extensive trials
+.br
+ by the user that contains a combination of empty space or long strings
+.br
+Another issue in the program is the delay in response by the client to the 
+.br
+server or vice versa, often truncating the data. To prevent issue simply
+.br
+redo the comand again without any trivial input.
+.SH "SEE ALSO"
+Full documentation at: <https://docs.python.org/2/howto/sockets.html>
